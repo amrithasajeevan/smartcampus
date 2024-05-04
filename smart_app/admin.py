@@ -12,4 +12,6 @@ from django.contrib.auth.admin import UserAdmin
 #     #     (None, {'fields': ('admission_number', 'middle_name', 'date_of_birth', 'blood_group', 'place', 'phone_number', 'department', 'course', 'batch', 'start_year', 'end_year', 'barcode', 'image')}),
 #     # )
 
+
 admin.site.register(CustomUser)
+admin.site.register(Attendance)
