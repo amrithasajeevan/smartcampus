@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'smart_campus.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'smart_campus',
+        'NAME': 'campus',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',   
