@@ -63,7 +63,17 @@ class Loginserializer(serializers.Serializer):
     password=serializers.CharField(max_length=10)
 
 
+from rest_framework import serializers
+
 class ProfileSerializer(serializers.ModelSerializer):
+    barcode = serializers.SerializerMethodField(read_only=True)
+    admission_number = serializers.CharField(read_only=True)
+
+    def get_barcode(self, obj):
+        if obj.barcode:
+            return obj.barcode.url
+        return None
+
     class Meta:
         model = CustomUser
-        fields = [ 'username','first_name', 'middle_name', 'last_name', 'email', 'image',  'date_of_birth', 'blood_group', 'place', 'phone_number', 'department', 'course', 'batch', 'start_year', 'end_year']
+        fields = ['username', 'first_name', 'middle_name', 'last_name', 'email', 'image', 'date_of_birth', 'blood_group', 'place', 'phone_number', 'department', 'course', 'batch', 'start_year', 'end_year', 'admission_number', 'barcode']
